@@ -1,0 +1,401 @@
+\documentclass[a4paper, 9pt, twocolumn]{article}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+%\usepackage{algorithm2e}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage[a4paper, twocolumn, margin=1cm]{geometry}
+%\usepackage{caption}
+%\usepackage{array}
+%\geometry{top=1in, bottom=1in, left=1pt, right=1pt}
+%\usepackage[left=1cm, right=1cm, top=2cm, bottom=2cm]{geometry}
+
+
+\date{ }
+\title{\underline{QuickSort and TimSort}}
+\author
+{
+\begin{tabular}[t]{c@{\extracolsep{20mm}}c@{\extracolsep{20mm}}c}
+{\it Md Naim Parvez} & {\it Author-2} & {\it Author-3} \\
+Affiliation & Affiliation & Affiliation \\
+Address & Address & Address \\
+e-mail & e-mail & e-mail \\
+\\
+{\it Author-4} & {\it Author-5} & {\it Author-6} \\
+Affiliation & Affiliation & Affiliation \\
+Address & Address & Address \\
+e-mail & e-mail & e-mail \\
+\end{tabular}
+}
+
+\begin{document}
+\maketitle
+%
+\begin{abstract}
+  Abstract of the article … Abstract of the article …
+\end{abstract}
+%
+\section{Introduction}
+Sorting algorithms play a fundamental role in computer science, underpinning countless applications from database management to scientific computing and machine learning. Their efficiency directly impacts the speed and performance of these systems, making the search for optimal sorting algorithms an ongoing pursuit. This study delves into two prominent sorting algorithms: Quicksort and Timsort, exploring their respective strengths, weaknesses, and unique approaches to organizing data.
+\subsection[left=0pt]{\hbox{Importance of Sorting Algorithms:}}
+The ability to efficiently organize and search through large datasets is vital in almost every aspect of modern computing. Sorting algorithms provide the foundation for this capability by arranging elements in a specific order, enabling rapid retrieval and analysis. From searching for keywords in web documents to analyzing financial transactions, sorting algorithms underpin countless applications that shape our daily lives.
+\subsection{\mbox{The Need for Different Approaches:}}
+
+While the goal of sorting remains consistent, the nature of data and the specific requirements of different applications necessitate a variety of algorithms. No single sorting technique excels in all scenarios. Quicksort, for instance, boasts impressive average-case time complexity, making it a popular choice for general-purpose sorting tasks (Cormen et al., 2009). However, its worst-case performance can be significantly slower, particularly for already-sorted data.
+
+\subsection{Introducing Quicksort and Timsort:}
+Quicksort, conceived by Tony Hoare in 1959, is a divide-and-conquer algorithm that relies on partitioning the data around a chosen pivot element (Hoare, 1961). This recursive process continues until all sub-arrays are sorted. Quicksort's simplicity and efficiency have made it a widely used algorithm, although its worst-case performance can be a concern.\\\\
+Timsort, developed by Tim Peters in 2002, takes a more nuanced approach (Peters, 2002). It combines elements of merge sort and insertion sort, leveraging existing order within the data (runs) and efficiently merging them to achieve overall sortedness. Timsort's hybrid nature and adaptability make it particularly well-suited for real-world data, often exhibiting superior performance compared to Quicksort.
+
+\subsection{Objectives of this Study:}
+This study aims to provide a comprehensive comparison of Quicksort and Timsort, analyzing their respective advantages and limitations. We will explore the theoretical underpinnings of each algorithm, examining their time and space complexity in various scenarios. Additionally, we will implement both algorithms and conduct empirical evaluations on diverse datasets to compare their practical performance.
+\\\\
+Through this analysis, we hope to gain a deeper understanding of the trade-offs inherent in each approach and to provide insights into the selection of an appropriate sorting algorithm for different applications.
+\\
+%\cite{cormen2009}
+\hyperref[hoare1961]{[Reference]}
+
+\section{Background Study}
+Sorting algorithms have fascinated computer scientists for decades, with countless solutions born from the quest for efficient data organization. This background study delves into two prominent contenders: Quicksort and Timsort, dissecting their algorithms, analyzing relevant theories, and exploring prior research to lay the foundation for a thorough comparison.
+\subsection*{Quicksort:}
+
+\begin{algorithm}
+  \caption{QuickSort Algorithm}
+  \begin{algorithmic}[1]
+    \Function{Quicksort}{$A, p, r$}
+    \If{$p < r$}
+    \State $q \gets$ \Call{Partition}{$A, p, r$}
+    \State \Call{Quicksort}{$A, p, q-1$}
+    \State \Call{Quicksort}{$A, q+1, r$}
+    \EndIf
+    \EndFunction
+  \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+  \caption{Partition Function}
+  \begin{algorithmic}[1]
+    \Function{Partition}{$A, p, r$}
+    \State $x \gets A[r]$
+    \State $i \gets p-1$
+    \For{$j \gets p$ to $r-1$}
+    \If{$A[j] \leq x$}
+    \State $i \gets i+1$
+    \State \Call{Swap}{$A[i], A[j]$}
+    \EndIf
+    \EndFor
+    \State \Call{Swap}{$A[i+1], A[r]$}
+    \State \Return $i+1$
+    \EndFunction
+  \end{algorithmic}
+\end{algorithm}
+
+
+\subsection*{Algorithm BreakDown:}
+\begin{itemize}
+  \item Quick sort is a divide-and-conquer algorithm that sorts an array $A$ by recursively applying the following steps:\\
+        \begin{enumerate}
+          \item Choose an element $x$ from the array as the pivot. Usually, the last element $A[r]$ is chosen as the pivot.
+          \item Partition the array into two subarrays, one containing elements smaller than or equal to the pivot, and the other containing elements larger than the pivot. This is done by maintaining an index $i$ that keeps track of the last element in the first subarray, and swapping elements with another index $j$ that scans the array from left to right. After the partition, the pivot is placed in its correct position $q$ in the sorted array, such that $A[p..q-1] \leq A[q] \leq A[q+1..r]$.
+          \item Recursively sort the two subarrays $A[p..q-1]$ and $A[q+1..r]$ until the entire array is sorted.
+        \end{enumerate}
+\end{itemize}
+
+\subsection*{Theoretical Considerations:}
+\begin{enumerate}
+  \item Time Complexity:
+        \begin{itemize}
+          \item Best Case: $\Theta(n\log n)$
+          \item Worst Case: $\Theta(n^2)$(can occur with consistently poor pivot choices, such as pre-sorted or reverse-sorted data)
+          \item Average Case: $\Theta(n\log n)$
+        \end{itemize}
+  \item Space Complexity:$\Theta(log n)$ due to stack usage
+  \item In-place Algorithm: Sorts elements within the original array without requiring additional significant memory.
+  \item Not Stable: Does not guarantee the preservation of relative order among equal elements.
+\end{enumerate}
+\hyperref[hoare1961]{\textbf{[Prior Research]}}\\\\
+
+Both Quicksort and Timsort have intricate theoretical underpinnings. Quicksort's randomized pivot selection, while offering average-case efficiency, requires analysis of different probability distributions to fully understand its behavior. Timsort's hybrid nature necessitates careful considerations of merging strategies and fallback techniques to optimize performance across diverse data sets.
+
+\subsection*{Timsort:}
+Timsort, a hybrid sorting algorithm developed by Tim Peters in 2002, stands out for its efficiency and adaptability in real-world data. It combines the strengths of merge sort and insertion sort, strategically leveraging existing order within data to achieve optimal performance. This background study unpacks Timsort's algorithm, theoretical underpinnings, and relevant research, providing a foundation for understanding and evaluating its effectiveness.
+Theoretical Underpinnings and Prior Research
+\textit{\underline{algorithm}}
+
+
+\begin{algorithm}
+  \caption{Timsort}\label{alg:euclid}
+  \begin{algorithmic}[1]
+    \Function{Timsort}{$K$}
+    \State $stack: \pi \gets \emptyset$
+    \State $minrun \gets \textsc{ComputeMinrun}(K)$
+    \State $fnrun \gets 1$
+    % While loop 1
+    \While{$nrun \leq |K|$}
+    % Compute run and push to stack
+    \State $(rstart, rend) =  COMPUTE\_RUN(K, minrun, fnrun)$
+    \State \textproc{PushRun}($\pi$, $(rstart, rend)$)
+
+    % While loop 2
+    \While{$|\pi| > 1$}
+    % If condition for merging runs
+    \If{$|\pi| > 2$ $\land |\pi_{|\pi|-2}| < |\pi_{|\pi|-1}| + |\pi_{|\pi|}|$}
+    % If condition for choosing which runs to merge
+    \If{$|\pi_{|\pi|-2}| < |\pi_{|\pi|}|$}
+    \State \textproc{Merge}($(\pi_{|\pi|-2},~\pi_{|\pi|-1})$)
+    % Else condition for merging runs    
+    \Else
+    \State \textproc{Merge}($(\pi_{|\pi|-1},~\pi_{|\pi|})$)
+    \EndIf
+    \Else
+    \If{$|\pi_{|\pi_i-1|}| \leq |\pi_{|\pi|}|$}
+    \State \textproc{Merge}($(\pi_{|\pi|-1},~\pi_{|\pi|})$)
+    \Else
+    \State \textbf{break}
+    \EndIf
+    \EndIf
+    \EndWhile
+
+
+    % End of while loop 2
+
+    % Increment nrun
+    \State $fnrun \gets rend + 1$
+    \EndWhile
+    % End of while loop 1
+
+    % While loop 3
+    \While{$|\pi| > 1$}
+    % Merge remaining runs present in the stack
+    \If{$|\pi| > 2$ $\land |\pi_{|\pi|-2}| < |\pi_{|\pi|}| $}
+    % If condition for choosing which runs to merge
+    \State \textproc{Merge}($(\pi_{|\pi|-2},~\pi_{|\pi|-1})$)
+    % Else condition for merging runs    
+    \Else
+    \State \textproc{Merge}($(\pi_{|\pi|-1},~\pi{|\pi|})$)
+    \EndIf
+
+    \EndWhile
+    % End of while loop 3
+    \EndFunction
+  \end{algorithmic}
+\end{algorithm}
+
+
+
+\subsection*{Algorithm Breakdown}
+\begin{enumerate}
+  \item Determining Minimum Run Length:\\
+        \begin{itemize}
+          \item Timsort initiates by calculating a minimum run length (minrun) using a formula that considers the input array's size. This value guides the creation of initial runs.
+        \end{itemize}
+  \item Creating Runs:
+        \begin{itemize}
+          \item The algorithm scans the array, identifying ascending runs of elements at least as long as the minrun. These runs form the building blocks for subsequent merging.
+        \end{itemize}
+  \item Managing Runs with a Stack:
+        \begin{itemize}
+          \item Timsort employs a stack to efficiently manage runs. Each run is represented as a pair of indices (rstart, rend) denoting its start and end positions.
+        \end{itemize}
+  \item Merging Runs:
+        \begin{itemize}
+          \item The algorithm iteratively merges runs, adhering to two key principles:
+                \begin{itemize}
+                  \item \textbf{Gallop Mode:}When a run significantly exceeds its neighbor's size, a specialized merge technique known as gallop mode accelerates the process.
+                  \item \textbf{Invariant Preservation:}The algorithm maintains a stack invariant, ensuring that runs on the stack consistently follow a descending size pattern (with potential ties). This optimizes merging decisions.
+                \end{itemize}
+        \end{itemize}
+  \item Insertion Sort Fallback:
+        \begin{itemize}
+          \item For smaller sub-arrays (typically under 64 elements), Timsort switches to insertion sort, which often outperforms merge sort in these scenarios.
+        \end{itemize}
+\end{enumerate}
+
+\subsection*{Theoretical Considerations:}
+\begin{enumerate}
+  \item Time Complexity:
+        \begin{itemize}
+          \item Best Case: $\Theta(n)$(already sorted data)
+          \item Worst Case: $\Theta(n\log n)$(guaranteed)
+          \item Average Case: $\Theta(n\log n)$
+        \end{itemize}
+  \item Space Complexity: $\Theta(n)$ in the worst-case, but typically less in practice
+  \item Stable Sorting Algorithm: Preserves the relative order of equal elements.
+  \item Adaptive Nature: Effectively adjusts its behavior based on input data patterns, leading to superior performance in real-world scenarios.
+\end{enumerate}
+\hyperref[peters2002]{\textbf{[Prior Research]}}\\\\
+
+Both Quicksort and Timsort have intricate theoretical underpinnings. Quicksort's randomized pivot selection, while offering average-case efficiency, requires analysis of different probability distributions to fully understand its behavior. Timsort's hybrid nature necessitates careful considerations of merging strategies and fallback techniques to optimize performance across diverse data sets.
+
+
+\section{Results and Analysis}
+\subsection*{QuickSort}
+\begin{table}[h]
+  \centering
+  \label{tab:quick_sort_table}
+  \caption{QuickSort Results}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Original Data Size} & \textbf{Time Taken(seconds)} \\
+    \hline
+    100,000                     & 0.306939                     \\
+    150,000                     & 0.638545                     \\
+    200,000                     & 1.083271                     \\
+    250,000                     & 1.658464                     \\
+    300,000                     & 2.317179                     \\
+    350,000                     & 3.122396                     \\
+    400,000                     & 4.045282                     \\
+    450,000                     & 5.077774                     \\
+    500,000                     & 6.267001                     \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\linewidth]{quick_sort.png}  % Replace 'your_figure_filename' with the actual filename of your figure
+  \caption{QuickSort Performance}
+  \label{fig:quick_sort}
+\end{figure}
+
+\subsection*{TimSort}
+\begin{table}[h]
+  \centering
+  \label{tab:tim_sort_table}
+  \caption{TimSort Performance}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Sorted Data Size} & \textbf{Time Taken(seconds)} \\
+    \hline
+    100,000                   & 0.154024                     \\
+    150,000                   & 0.229494                     \\
+    200,000                   & 0.320642                     \\
+    250,000                   & 0.424818                     \\
+    300,000                   & 0.492517                     \\
+    350,000                   & 0.590564                     \\
+    400,000                   & 0.710162                     \\
+    450,000                   & 0.818061                     \\
+    500,000                   & 0.936718                     \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\linewidth]{tim_sort.png}  % Replace 'your_figure_filename' with the actual filename of your figure
+  \caption{TimSort Performance}
+  \label{fig:tim_sort}
+\end{figure}
+\subsection*{\underline{Comparision:}}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\linewidth]{comp1.png}  % Replace 'your_figure_filename' with the actual filename of your figure
+  \caption{comparision of QuickSort and TimSort}
+  \label{fig:comp1}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\linewidth]{comp2.png}  % Replace 'your_figure_filename' with the actual filename of your figure
+  \caption{comparision of QuickSort and TimSort}
+  \label{fig:comp2}
+\end{figure}
+
+\subsection*{Comparison of Quicksort and Timsort Based on Empirical Data:}
+\subsubsection*{\underline{Algorithm Efficiency:}}
+QuickSort:\\
+Demonstrates efficient performance with average time complexities of $O(n log n)$.
+Particularly effective for smaller datasets and generally outperforms many sorting algorithms.
+TimSort:\\
+Exhibits stable performance with an average-case time complexity of $O(n log n)$.
+Designed to handle real-world datasets efficiently, making it suitable for various applications.
+
+\subsubsection*{\underline{Adaptability to Dataset Size:}}
+QuickSort:\\
+Performs well on average-sized datasets but may experience performance degradation on larger datasets.
+Notably efficient for smaller arrays, as observed in the provided data.\\
+TimSort:\\
+Demonstrates stable performance across a wide range of dataset sizes.
+Designed to handle both small and large datasets effectively, as evident from the provided data.
+
+\subsubsection*{\underline{Stability:}}
+QuickSort:\\
+Traditionally an unstable sorting algorithm, meaning it may change the relative order of equal elements.
+In-place implementation may result in a lack of stability in certain scenarios.\\
+TimSort:\\
+Designed to be a stable sorting algorithm, ensuring the preservation of the relative order of equal elements.
+Offers stability even in the presence of duplicate values.
+
+\subsubsection*{\underline{Predictability:}}
+QuickSort:\\
+Performance may vary depending on the choice of the pivot element, leading to less predictable outcomes.
+Worst-case time complexity of $O(n^2)$ in certain scenarios.\\
+TimSort:\\
+Offers predictable and reliable performance across diverse datasets.
+Employs a hybrid approach, combining insertion sort with merge sort for improved predictability.
+
+\section*{4. Conclusion}
+
+In conclusion, this study has delved into a comparative analysis of QuickSort and TimSort, two prominent sorting algorithms, shedding light on their respective efficiencies and adaptabilities. The primary objective of this research was to understand the performance of these algorithms across different data sizes and draw meaningful insights from the provided data.
+
+\subsection*{Key Findings}
+
+\begin{enumerate}
+  \item \textbf{Efficiency:} QuickSort demonstrated notable efficiency for smaller datasets, outperforming TimSort in these scenarios. However, TimSort showcased consistent and stable performance across a diverse range of dataset sizes.
+
+  \item \textbf{Adaptability:} While QuickSort excelled in smaller datasets, TimSort's versatility was evident, making it a reliable choice for both small and large datasets. This adaptability positions TimSort as a robust sorting algorithm suitable for real-world applications.
+
+  \item \textbf{Stability and Predictability:} TimSort's stability in maintaining the relative order of equal elements contrasts with the less predictable outcomes of QuickSort, particularly in worst-case scenarios.
+
+  \item \textbf{Broader Implications:} Understanding the characteristics and performance of sorting algorithms is fundamental to various applications in computer science and data processing. The findings of this study contribute to the ongoing discourse surrounding algorithmic efficiency and provide practical insights for selecting the most appropriate algorithm based on dataset characteristics.
+\end{enumerate}
+
+\subsection*{Limitations}
+
+It is crucial to acknowledge the limitations of this study. The analysis was based on a specific dataset and may not capture the entire spectrum of scenarios. The performance of sorting algorithms can also be influenced by factors such as hardware, programming language, and the specific implementation details.
+
+\subsection*{Future Directions}
+
+Future research endeavors could explore the integration of these algorithms into specific applications, considering real-world constraints and requirements. Additionally, a deeper investigation into the impact of different pivot selection strategies in QuickSort may offer nuanced insights into its performance characteristics.
+
+\subsection*{Overall Significance}
+
+This study contributes valuable insights into the comparative performance of QuickSort and TimSort, providing practitioners and researchers with a basis for algorithm selection in different contexts. By highlighting their strengths and weaknesses, the study aids in informed decision-making regarding algorithmic choices in various computational tasks.
+
+In reflection, this research not only furthers our understanding of sorting algorithms but also prompts further exploration into the dynamic realm of algorithmic efficiency and adaptability. The broader implications underscore the importance of aligning algorithmic choices with specific dataset characteristics, emphasizing the practical significance of the study in the field of computer science and beyond.
+
+% \bibliographystyle{plain}
+% \bibliography{mybib2}
+\begin{thebibliography}{9}
+
+  \bibitem{cormen2009}
+  T. H. Cormen, C. E. Leiserson, R. L. Rivest, \& C. Stein, "Introduction to Algorithms" (3rd ed.). MIT Press.
+  \label{cormen2009}
+  \bibitem{hoare1961}
+  C. A. R. Hoare, "Quicksort," \textit{The Computer Journal}, vol. 5, no. 1, pp. 10-15, 1961.
+  \label{hoare1961}
+  \bibitem{peters2002}
+  T. Peters, "Timsort: A stable sorting algorithm," [Blog post] Timsort, September 12, 2002.
+  \label{peters2002}
+  \bibitem{geeksforgeeks}
+  Geeks For Geeks, \url{https://www.geeksforgeeks.org}.
+  \label{geeksforgeeks}
+  \bibitem{wikipedia}
+  Wikipedia.
+  \label{wikipedia}
+  \bibitem{researchgate}
+  Research-Gate.
+  \label{researchgate}
+  \bibitem{googlescholar}
+  Google Scholar, \url{https://scholar.google.com}.
+  \label{googlescholar}
+  \bibitem{bard}
+  BARD.
+  \label{bard}
+\end{thebibliography}
+
+
+\end{document}

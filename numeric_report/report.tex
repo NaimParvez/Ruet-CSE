@@ -1,0 +1,117 @@
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{float}
+
+\begin{document}
+
+\title{Lab Report: Numerical Methods}
+\date{}
+\maketitle
+
+\section*{Lab Report 1: Bisection and False Position Methods for Root Finding}
+
+\subsection*{i) Name of the Experiment}
+Bisection and False Position Methods for Root Finding
+
+\subsection*{ii) Theoretical Background}
+\subsubsection*{Bisection Method:}
+The Bisection method is a numerical technique for finding the root of a continuous function within a specified interval. It operates on the principle of intermediate value theorem and repeatedly narrows down the interval containing the root. The midpoint of the interval is calculated as:
+\[ x_{\text{mid}} = \frac{a + b}{2} \]
+where \(a\) and \(b\) are the endpoints. The method continues until the interval becomes sufficiently small or a predetermined tolerance is achieved.
+
+\subsubsection*{False Position Method:}
+The False Position method combines aspects of linear interpolation and the bisection method. It updates the interval based on linear interpolation, and the new estimate \(x\) is given by:
+\[ x = \frac{a \cdot f(b) - b \cdot f(a)}{f(b) - f(a)} \]
+This process is repeated until convergence or the maximum number of iterations is reached.
+
+\subsection*{iii) Source Code}
+\begin{lstlisting}[language=C++]
+// ... [The source code for bisection and false position methods]
+\end{lstlisting}
+
+\subsection*{iv) Output (Screenshot)}
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=0.8\textwidth]{bisection_false_position_output.png}
+    \caption{Output for Bisection and False Position Methods}
+\end{figure}
+
+\subsection*{v) Discussion}
+[Discuss the results, convergence, and limitations of the bisection and false position methods.]
+
+\newpage
+
+\section*{Lab Report 2: Newton's Forward and Backward Interpolation}
+
+\subsection*{i) Name of the Experiment}
+Newton's Forward and Backward Interpolation
+
+\subsection*{ii) Theoretical Background}
+\subsubsection*{Forward Newton Interpolation:}
+Forward Newton interpolation is a method to approximate values between data points using a forward-divided difference scheme. The formula for the interpolated value \(f(x)\) is:
+\[ f(x) \approx y_0 + (x - x_0)\Delta y_0 + \frac{(x - x_0)(x - x_1)}{2!}\Delta^2 y_0 + \ldots \]
+This method is suitable when data points are arranged in increasing order of the independent variable.
+
+\subsubsection*{Backward Newton Interpolation:}
+Backward Newton interpolation, on the other hand, uses a backward-divided difference scheme. The formula for \(f(x)\) is similar but works with data points arranged in decreasing order of the independent variable.
+
+\subsection*{iii) Source Code}
+\begin{lstlisting}[language=C++]
+// ... [The source code for Newton's Forward and Backward Interpolation]
+\end{lstlisting}
+
+\subsection*{iv) Output (Screenshot)}
+\begin{figure}[H]
+    \centering
+   % \includegraphics[width=0.8\textwidth]{newton_interpolation_output.png}
+    \caption{Divided Differences Table for Newton's Forward and Backward Interpolation}
+\end{figure}
+
+\subsection*{v) Discussion}
+[Discuss the significance of Newton's interpolation methods and compare the results obtained from forward and backward interpolation.]
+
+\newpage
+
+\section*{Lab Report 4: Numerical Integration using Trapezoidal, Simpson's One-Third, and Three-Eighths Rules}
+
+\subsection*{i) Name of the Experiment}
+Numerical Integration using Trapezoidal, Simpson's One-Third, and Three-Eighths Rules
+
+\subsection*{ii) Theoretical Background}
+\subsubsection*{Trapezoidal Rule:}
+The Trapezoidal Rule is a numerical integration technique that approximates the definite integral of a function. The formula for the Trapezoidal Rule is:
+\[ \int_{a}^{b} f(x) \,dx \approx \frac{h}{2} \left[ f(a) + 2\sum_{i=1}^{n-1} f(x_i) + f(b) \right] \]
+where \(h\) is the width of each subinterval.
+
+\subsubsection*{Simpson's One-Third Rule:}
+Simpson's One-Third Rule provides a more accurate approximation by using quadratic polynomials over two adjacent subintervals. The formula is:
+\[ \int_{a}^{b} f(x) \,dx \approx \frac{h}{3} \left[ f(a) + 4\sum_{i=1}^{n-1} f(x_{2i-1}) + 2\sum_{i=1}^{n-1} f(x_{2i}) + f(b) \right] \]
+
+\subsubsection*{Simpson's Three-Eighths Rule:}
+Simpson's Three-Eighths Rule is an extension of Simpson's Rule for non-multiple-of-three intervals. The formula is:
+\[ \int_{a}^{b} f(x) \,dx \approx \frac{3h}{8} \left[ f(a) + 3\sum_{i=1}^{n-1} f(x_{3i-2}) + 3\sum_{i=1}^{n-1} f(x_{3i-1}) + 2\sum_{i=1}^{n-1} f(x_{3i}) + f(b) \right] \]
+
+\subsection*{iii) Source Code}
+\begin{lstlisting}[language=C++]
+// ... [The source code for numerical integration using Trapezoidal, Simpson's One-Third, and Three-Eighths Rules]
+\end{lstlisting}
+
+\subsection*{iv) Output (Screenshot)}
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=0.8\textwidth]{numerical_integration_output.png}
+    \caption{Output for Numerical Integration using Trapezoidal, Simpson's One-Third, and Three-Eighths Rules}
+\end{figure}
+
+\subsection*{v) Discussion}
+The lab report now provides a comprehensive overview of three numerical integration methods: Trapezoidal Rule, Simpson's One-Third Rule, and Simpson's Three-Eighths Rule. The output includes the calculated integration values, offering users insights into the accuracy and suitability of each method for different functions and intervals.
+ now write latex code for this with full package support
+\end{document}
+```
+
+This LaTeX code includes package support for geometry, graphicx, listings, amsmath, and float to enhance the formatting and layout of the lab report. Adjust the filenames in the `\includegraphics` commands to match the actual filenames of your screenshots.

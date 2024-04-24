@@ -1,0 +1,12 @@
+\frametitle{Background Study: Counting Sort Algorithm}
+\begin{verbatim}
+		Count array C[0..k] initialized to 0;
+		for i from 1 to n do
+		C[A[i]] += 1;
+		for i from 1 to k do
+		C[i] += C[i-1];
+		for i from n to 1 do
+		B[C[A[i]]] = A[i];
+		C[A[i]] -= 1;
+	\end{verbatim}
+	Counting Sort begins by creating an array filled with zeros and counting occurrences of each distinct element. It then calculates positions for elements and efficiently places them in their final order.
