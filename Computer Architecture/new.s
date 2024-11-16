@@ -18,9 +18,14 @@ __Vectors
 Reset_Handler
 ;;;;;;;;;;User Code Starts from the next 
 line;;;;;;;;;;;;
- ; int a = 23;
- ; int b = 0x45;
- MOV R4, #23
- MOV R5, #0x45
+
+ MOV R0, #50 ; R0 = 4
+ WHILE
+ CMP R0, #0 
+ BEQ THERE 
+ SUB R0, R0, #10
+ B WHILE 
+THERE
+STOP  
  
- END ;End of the program
+ END 

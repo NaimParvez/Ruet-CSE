@@ -19,20 +19,12 @@ Reset_Handler
 ;;;;;;;;;;User Code Starts from the next 
  
  ; R1 = 0x46A1F1B7
- MOV R1, #0x46000000
- ORR R1, #0xA10000
- ORR R1, #0xF100
- ORR R1, #0xB7
- 
- ; R2 = 0xFFFF0000
- MOV R2, #0xFF000000
- ORR R2, #0xFF0000
- AND R3, R1, R2
- ORR R4, R1, R2
- EOR R5, R1, R2
- BIC R6, R1, R2
- MVN R7, R2
-STOP 
- B STOP 
- 
+ MOV R1,#50
+while
+ CMP R1,#0
+ BEQ Done
+ SUB R1,R1,#10
+ B while
+  
+Done
  END ;End of the program
