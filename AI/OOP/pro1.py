@@ -1,10 +1,28 @@
 import random
 
+
 class Atm:
+    #class/static variable
+    __counter=1
+    
     def __init__(self):
+        #instant variable
         self.card_num=''
         self.__balance = 0
         self.__pin = ''
+        self.serial =Atm.__counter
+        Atm.__counter+=1
+          
+            
+    @staticmethod
+    def get_counter():  #we don't need to pass any obj since we are not deal with obj
+        return Atm.__counter
+    @staticmethod
+    def set_counter(new):
+        if type(new)==int:
+            Atm.__counter =new
+        else:
+            print("not Allowed")
 
         
         # self.menu()
