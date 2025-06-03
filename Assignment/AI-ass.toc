@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Background of DENDRAL}{1}{section.2}%
+\contentsline {section}{\numberline {3}Literature Review}{1}{section.3}%
+\contentsline {section}{\numberline {4}Architecture and Components}{2}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Knowledge Base}{2}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Inference Engine}{2}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}User Interface}{3}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Working Mechanism}{3}{section.5}%
+\contentsline {section}{\numberline {6}Strengths and Limitations}{5}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Strengths}{5}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Limitations}{5}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Applications and Impact}{6}{section.7}%
+\contentsline {section}{\numberline {8}Conclusion}{7}{section.8}%

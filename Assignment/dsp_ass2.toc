@@ -1,0 +1,18 @@
+\contentsline {section}{Contents}{1}{section*.1}%
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}Motivation}{2}{section.2}%
+\contentsline {section}{\numberline {3}Background Study}{3}{section.3}%
+\contentsline {section}{\numberline {4}Social and Economic Impact}{3}{section.4}%
+\contentsline {section}{\numberline {5}Related Mathematical Studies}{4}{section.5}%
+\contentsline {section}{\numberline {6}Theory}{5}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Digital Audio Signals}{5}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Convolution}{5}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Filters in Audio Processing}{5}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Implementation}{6}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Tools and Libraries}{6}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Audio Data}{6}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Methodology / Steps}{6}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Code Segments}{8}{section.8}%
+\contentsline {section}{\numberline {9}Output/Results}{10}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Discussion of Results}{11}{subsection.9.1}%
+\contentsline {section}{\numberline {10}Conclusion}{12}{section.10}%

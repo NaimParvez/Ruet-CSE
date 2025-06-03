@@ -1,0 +1,17 @@
+\contentsline {section}{Contents}{1}{section*.1}%
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}Motivation}{2}{section.2}%
+\contentsline {section}{\numberline {3}Background Study}{2}{section.3}%
+\contentsline {section}{\numberline {4}Social and Economic Impact}{3}{section.4}%
+\contentsline {section}{\numberline {5}Related Mathematical Studies}{3}{section.5}%
+\contentsline {section}{\numberline {6}Theory}{4}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Electroencephalogram (EEG) Signals}{4}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Discrete Fourier Transform (DFT)}{4}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Signal Reconstruction using Inverse DFT (IDFT)}{4}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Implementation}{5}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Tools and Libraries}{5}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Data Source}{5}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Procedure}{5}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Code Segments}{5}{section.8}%
+\contentsline {section}{\numberline {9}Output/Results}{8}{section.9}%
+\contentsline {section}{\numberline {10}Conclusion}{9}{section.10}%
