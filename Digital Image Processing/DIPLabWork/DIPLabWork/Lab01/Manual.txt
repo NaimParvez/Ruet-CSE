@@ -1,0 +1,31 @@
+Week:
+1 3 5 7 9 11
+Lab final-13
+
+100 Marks Distribution:
+    25 Marks-Board Viva
+    Latex -Lab report (7.5 Marks)
+    Lab Final - 50% (37.5 Marks)
+    Lab quiz - 10-15%
+    Lab Assessment-10-15%
+    Attendance-10
+
+Python Basic
+    ->Loop
+    ->Array
+    ->Function/Method
+    ->Dictionary 
+
+Image:
+    ->Pillow 
+    ->openCV:open,read,Display,Write
+    ->Read openCV documentation
+
+Matplotlib RGB, OpenCV-BGR
+Lab Report-1:
+            Python & openCv Basics
+            Matplotlib subplot
+            Image read,OpenCV read and Show, Show in color Space conversion(HSV,RGB,Gray Scale)
+            To show image cv2_imshow, and for plt.show()
+            Why/How a image is shown differently in Matplotlib and in OpenCV? -> Analysis 
+            Why happening and how to solve

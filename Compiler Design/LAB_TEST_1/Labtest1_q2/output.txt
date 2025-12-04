@@ -1,0 +1,30 @@
+Starting parser for year and degree information...
+Year -> KEYWORD
+( -> LPAREN
+2020 -> NUMBER
+) -> RPAREN
+MBA -> DEGREE_NAME
+- -> DASH
+3 -> NUMBER
+Parsed: Year (2020) MBA-3
+\n -> NEWLINE
+Year -> KEYWORD
+( -> LPAREN
+2019 -> NUMBER
+) -> RPAREN
+MSc -> DEGREE_NAME
+- -> DASH
+2 -> NUMBER
+Parsed: Year (2019) MSc-2
+\n -> NEWLINE
+Year -> KEYWORD
+( -> LPAREN
+2022 -> NUMBER
+) -> RPAREN
+BBA -> DEGREE_NAME
+- -> DASH
+1 -> NUMBER
+Parsed: Year (2022) BBA-1
+Timestamp: Oct 28 2025 21:31:26
+ error: syntax error
+Parsing Finished

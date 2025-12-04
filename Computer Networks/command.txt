@@ -1,0 +1,61 @@
+#RAW mode 
+1. erase startup-config
+2. reload
+
+#Prevent unwanted DNS lookups.
+1. no ip domain-lookup
+
+#Enter local passwords
+1. enable secret cisco
+2. line console 0
+3. password class
+4. login
+#virtual terminal
+-line vty 0 4
+-password class
+-login
+(service password-encryption)
+ 
+#Enter a login MOTD banner.
+1. banner motd 'msg'
+
+#Save the configuration.
+1. copy running-config startup-config
+
+-enable secret cisco
+-line console 0
+-password class
+-login
+-line vty 0 15
+-password class
+-login
+-service pasword-encryption
+
+#static
+-ip route netwokip mask exiting_interface
+
+#dynamic
+*rip
+-router rip
+-version 2(if rip version 2 needed)
+-network ip_address  (only the directly connected ones)
+
+*eigrp
+-router eigrp 1
+-network network_ip_address mask(1's complimented)
+
+-passive-interface gaga/fast port_no(for stab network)
+-default-information originate(add static route to dynamic routing)
+
+#SSH config
+(config)- ip domain-name admin
+-crypto key generation rsa
+1024
+-ip ssh version 2
+-username admin privilege 15 secret cisco
+-line vty 0 4
+-transport input ssh
+-login local
+
+*in pc's command prompt
+-ssh -l admin router_ip

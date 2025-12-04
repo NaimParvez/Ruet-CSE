@@ -1,0 +1,18 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces Data Information Overview}}{3}{figure.caption.3}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Missing value injection results}}{5}{figure.caption.5}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Missing value handling results}}{5}{figure.caption.6}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Encoding and Standardization results}}{7}{figure.caption.8}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Pearson Correlation Heatmap of Numeric Features}}{9}{figure.caption.9}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Similarity and Dissimilarity Measures Results}}{9}{figure.caption.10}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Categorical Feature Distributions}}{12}{figure.caption.11}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Numeric Feature Distributions}}{12}{figure.caption.12}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Boxplots of Numeric Features}}{13}{figure.caption.13}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Decision Tree Classifier Accuracy and Classification Report}}{15}{figure.caption.14}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Decision Tree Visualization}}{16}{figure.caption.15}%
+\contentsline {figure}{\numberline {12}{\ignorespaces 10-Fold Cross-Validation Scores}}{17}{figure.caption.16}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Elbow method plot for K from 2 to 10.}}{18}{figure.caption.17}%
+\contentsline {figure}{\numberline {14}{\ignorespaces PCA Visualization of k-Means Clusters (K=4)}}{19}{figure.caption.18}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Truncated Dendrogram from Hierarchical Clustering}}{21}{figure.caption.19}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Output of data loading and one-hot encoding preprocessing.}}{22}{figure.caption.20}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Frequent itemsets found by FP-Growth (min\_support >= 0.2).}}{23}{figure.caption.21}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Association rules with confidence >= 0.6, sorted by lift.}}{24}{figure.caption.22}%

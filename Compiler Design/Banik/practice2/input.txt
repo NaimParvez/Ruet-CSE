@@ -1,0 +1,36 @@
+int a;
+
+int func(int a, int b){
+    int x;
+    int y = 50;
+    int a, b, c = 10;
+    int d = a + b + c;
+return 0;
+}
+
+int main(){
+    int a;
+    char a;
+
+    if(b > 3){
+        printf("hello world");
+    }
+    else if(b < 5){
+        if(a == 2){
+            i++;
+        }
+    }
+    else{
+        printf("world hello");
+    }
+
+    a = a + b;
+
+    while(a >= 3){
+        for(int i=0; i<n; i++){
+            a++;
+        }
+    }
+
+return 0;
+}

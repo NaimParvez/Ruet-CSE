@@ -1,0 +1,16 @@
+1. Image Negative: S= L-1 +R
+input = cv2.imread(path,cv2.imgreadgrayscale)
+rows,cols = input.shape()
+
+for i in range(input.shape[0])//rows
+    for j in range(input.shape[1]):
+        input[i,j] = L-1-input[i,j]
+
+        show(input[i,j])
+
+subplot e show
+
+2. Log transformation-max,min (np.max(image))
+3. Gamma Correction
+4. Thresholding
+5. Constrast stretching-max,min

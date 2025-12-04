@@ -1,0 +1,14 @@
+Starting parser for university information...
+RUET -> UNIVERSITY_NAME
+CSE -> DEPARTMENT_NAME
+17 -> YEAR
+\n -> NEWLINE
+CUET -> UNIVERSITY_NAME
+CSE -> DEPARTMENT_NAME
+18 -> YEAR
+\n -> NEWLINE
+BUET -> UNIVERSITY_NAME
+EEE -> DEPARTMENT_NAME
+19 -> YEAR
+\n -> NEWLINE
+Timestamp: Aug 18 2025 04:10:57 Parsing Finished

@@ -1,0 +1,25 @@
+
+hello.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <main>:
+   0:	55                   	push   rbp
+   1:	48 89 e5             	mov    rbp,rsp
+   4:	48 83 ec 10          	sub    rsp,0x10
+   8:	c7 45 fc 05 00 00 00 	mov    DWORD PTR [rbp-0x4],0x5
+   f:	c7 45 f8 0a 00 00 00 	mov    DWORD PTR [rbp-0x8],0xa
+  16:	8b 55 fc             	mov    edx,DWORD PTR [rbp-0x4]
+  19:	8b 45 f8             	mov    eax,DWORD PTR [rbp-0x8]
+  1c:	01 d0                	add    eax,edx
+  1e:	89 45 f4             	mov    DWORD PTR [rbp-0xc],eax
+  21:	8b 45 f4             	mov    eax,DWORD PTR [rbp-0xc]
+  24:	89 c6                	mov    esi,eax
+  26:	48 8d 05 00 00 00 00 	lea    rax,[rip+0x0]        # 2d <main+0x2d>
+  2d:	48 89 c7             	mov    rdi,rax
+  30:	b8 00 00 00 00       	mov    eax,0x0
+  35:	e8 00 00 00 00       	call   3a <main+0x3a>
+  3a:	b8 00 00 00 00       	mov    eax,0x0
+  3f:	c9                   	leave
+  40:	c3                   	ret

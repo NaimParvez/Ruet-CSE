@@ -1,0 +1,48 @@
+CC = gcc
+CFLAGS = -Wall -g
+
+all: objectfile.o executable
+
+objectfile.o: input.c
+	@echo "Compiling C source to object file..."
+	$(CC) $(CFLAGS) -c input.c -o objectfile.o
+	@echo "Object file 'objectfile.o' generated successfully!"
+	@echo "Displaying object file information:"
+	file objectfile.o
+	ls -la objectfile.o
+
+executable: objectfile.o
+	@echo "Linking object file to create executable..."
+	$(CC) objectfile.o -o program
+	@echo "Executable 'program' created successfully!"
+
+stages: input.c
+	@echo "=== C Compilation Stages ==="
+	@echo "1. Preprocessing:"
+	$(CC) -E input.c -o input.i
+	@echo "   Preprocessed file: input.i"
+	
+	@echo "2. Compilation to Assembly:"
+	$(CC) -S input.c -o input.s
+	@echo "   Assembly file: input.s"
+	
+	@echo "3. Assembly to Object:"
+	$(CC) -c input.c -o objectfile.o
+	@echo "   Object file: objectfile.o"
+	
+	@echo "4. Linking to Executable:"
+	$(CC) objectfile.o -o program
+	@echo "   Executable: program"
+	
+	@echo "=== File Information ==="
+	ls -la input.i input.s objectfile.o program
+
+clean:
+	rm -f *.o *.i *.s program
+	@echo "Cleaned all generated files"
+
+run: executable
+	@echo "Running the program:"
+	./program
+
+.PHONY: all stages clean run

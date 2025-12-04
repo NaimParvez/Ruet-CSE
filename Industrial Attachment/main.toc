@@ -1,0 +1,110 @@
+\contentsline {section}{Declaration}{1}{Doc-Start}%
+\contentsline {section}{Acknowledgment}{2}{Doc-Start}%
+\contentsline {section}{Executive Summary}{3}{Doc-Start}%
+\contentsline {paragraph}{Key Projects and Achievements}{3}{paragraph*.1}%
+\contentsline {paragraph}{Technical Skills Development}{3}{paragraph*.2}%
+\contentsline {paragraph}{Impact and Learning Outcomes}{3}{paragraph*.3}%
+\contentsline {section}{List of Abbreviations}{v}{section*.6}%
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Background of Industrial Attachment}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Importance in Achieving Engineering Program Outcomes}{1}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Objectives of the Attachment}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Scope and Limitations}{2}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Methodology}{3}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Structure of the Report}{4}{subsection.1.6}%
+\contentsline {section}{\numberline {2}Organization Overview}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}History and Mission}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Organizational Structure}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Departments and Functions}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Products / Services}{8}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Quality and Compliance Standards}{8}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Project Management and Coordination}{9}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Workplace Safety and Environmental Policy}{9}{subsection.2.7}%
+\contentsline {section}{\numberline {3}Project Overview}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Project 1: Simple Conversational AI Chatbot}{10}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Literature Survey and Background Study}{10}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Project Description}{10}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Experiment and Design Methodology}{10}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}Problem Identification and Approach}{11}{subsubsection.3.1.4}%
+\contentsline {subsubsection}{\numberline {3.1.5}Implementation and Architecture}{11}{subsubsection.3.1.5}%
+\contentsline {subsubsection}{\numberline {3.1.6}Validation and Findings}{11}{subsubsection.3.1.6}%
+\contentsline {subsection}{\numberline {3.2}Project 2: SavantSearch - A Semantic Product Search Engine}{12}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Literature Survey and Background Study}{12}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Project Description}{12}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Experiment and Design Methodology}{12}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Problem Identification and Approach}{13}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.5}Implementation and Architecture}{14}{subsubsection.3.2.5}%
+\contentsline {subsubsection}{\numberline {3.2.6}Validation and Results}{14}{subsubsection.3.2.6}%
+\contentsline {subsubsection}{\numberline {3.2.7}Findings}{14}{subsubsection.3.2.7}%
+\contentsline {subsection}{\numberline {3.3}Project 3: VisionCare AI Doctor (API-Based Prototype)}{15}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Literature Survey and Background Study}{15}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Project Description}{15}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Experiment and Design Methodology}{16}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Problem Identification and Approach}{16}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.5}Implementation and Architecture}{17}{subsubsection.3.3.5}%
+\contentsline {subsubsection}{\numberline {3.3.6}Validation and Findings}{17}{subsubsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.4}Project 4: AI Doctor Jhatka (Full-Stack Platform)}{18}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Literature Survey and Background Study}{18}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Project Description}{18}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Experiment and Design Methodology}{19}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Problem Identification and Approach}{19}{subsubsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {3.4.5}Implementation and Architecture}{20}{subsubsection.3.4.5}%
+\contentsline {subsubsection}{\numberline {3.4.6}Validation and Results}{23}{subsubsection.3.4.6}%
+\contentsline {subsubsection}{\numberline {3.4.7}Findings}{23}{subsubsection.3.4.7}%
+\contentsline {section}{\numberline {4}Tools \& Techniques}{25}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Engineering \& IT Tools Used}{25}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Development Tools \& Programming Languages}{25}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Web Development Frameworks \& Libraries}{25}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}AI \& Machine Learning Tools}{26}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.4}Data Storage \& Management}{26}{subsubsection.4.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.5}Hardware Resources}{26}{subsubsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.2}Selection Criteria and Justification}{26}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Technical Requirements Alignment}{26}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Resource Constraints}{27}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Future-Proofing and Sustainability}{27}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Application in Solving Complex Engineering Problems}{28}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Semantic Understanding in Search Systems}{28}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Privacy-Preserving AI for Healthcare}{28}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Multimodal Input Processing}{29}{subsubsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.4}Understanding Limitations and Constraints}{29}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Technical Limitations}{29}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Resource Constraints}{30}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Integration Challenges}{30}{subsubsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.5}Examples of Simulation/Modeling/Testing Tools}{31}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Model Simulation and Evaluation}{31}{subsubsection.4.5.1}%
+\contentsline {section}{\numberline {5}Societal, Health, Safety, Legal \& Cultural Considerations}{32}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Workplace Health and Safety Measures}{32}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Legal Compliance in Engineering Activities}{32}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Societal and Cultural Awareness in Solution Design}{33}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Environmental Sustainability Considerations}{33}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Case Examples from the Attachment Site}{34}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Professional Ethics \& Responsibilities}{36}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Ethical Challenges Faced During the Attachment}{36}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Compliance with Professional Codes of Ethics}{36}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Handling Intellectual Property and Confidentiality}{37}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Ethical Decision-Making Examples from Real Tasks}{37}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Skills Gained \& Lifelong Learning}{39}{section.7}%
+\contentsline {subsection}{\numberline {7.1}New Technical Skills Learned During the Attachment}{39}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Self-Directed Learning Activities}{39}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Challenges \& Solutions}{41}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Technical Challenges and Resolution}{41}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Administrative/Organizational Challenges and Resolution}{41}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}Cross-Team Collaboration Barriers}{41}{subsubsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.3}Lessons Learned}{42}{subsection.8.3}%
+\contentsline {section}{\numberline {9}Contribution to the Organization}{43}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Specific Contributions and Their Impact}{43}{subsection.9.1}%
+\contentsline {subsubsection}{\numberline {9.1.1}Technical Contributions}{43}{subsubsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.2}Improvements Suggested and Implemented}{44}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Feedback from Supervisors}{44}{subsection.9.3}%
+\contentsline {section}{\numberline {10}Conclusion \& Recommendations}{45}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Summary of Work Done}{45}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Recommendations for the Organization}{45}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Recommendations for the University}{45}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Recommendations for Future Attachment Students}{46}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Concluding Reflections}{46}{subsection.10.5}%
+\contentsline {section}{References}{46}{subsection.10.5}%
+\contentsline {section}{\numberline {A}Daily Log Sheets}{48}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Week 1 (March 10 - March 14, 2025)}{48}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Week 2 (March 17 - March 21, 2025)}{48}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}Week 3 (March 24 - March 25, 2025)}{48}{subsection.A.3}%
+\contentsline {section}{\numberline {B}Certificate of Completion}{49}{appendix.B}%

@@ -1,0 +1,8 @@
+FUNC main () 
+start
+       mone_kori a <-- integer
+       mone_kori b <-- integer
+       a equal 12
+       b equal 13 jog a
+       print_kori b
+end

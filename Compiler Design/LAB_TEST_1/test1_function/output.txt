@@ -1,0 +1,20 @@
+function -> FUNCTION
+ isEven -> IDENTIFIER
+( -> LPAREN
+n -> IDENTIFIER
+ : -> COLON
+ int -> TYPE
+) -> RPAREN
+
+begin -> BEGIN_TOKEN
+
+    return -> RETURN
+ n -> IDENTIFIER
+ % -> MOD
+ 2.0 -> DECIMAL
+ == -> COND
+ 0 -> NUMBER
+; -> SEMICOLON
+
+end -> END
+Accepted

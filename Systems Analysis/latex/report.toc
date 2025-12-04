@@ -1,0 +1,125 @@
+\contentsline {section}{\numberline {1}Recognition of Need}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Introduction to the System: Chaldal}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Problem Identification}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Conclusion}{7}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Initial Feasibility Study}{9}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Introduction}{9}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Initial Feasibility Analysis}{9}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Problem 01: Lack of Profitability and Funding Constraints}{9}{subsubsection.2.2.1}%
+\contentsline {paragraph}{Statement of the Problem}{9}{paragraph*.9}%
+\contentsline {paragraph}{Summary of Findings}{9}{paragraph*.10}%
+\contentsline {paragraph}{Details of Findings}{10}{paragraph*.12}%
+\contentsline {paragraph}{Recommendation}{11}{paragraph*.13}%
+\contentsline {subsubsection}{\numberline {2.2.2}Problem 02: Product Sourcing and Supply Chain Inefficiencies}{12}{subsubsection.2.2.2}%
+\contentsline {paragraph}{Statement of the Problem}{12}{paragraph*.14}%
+\contentsline {paragraph}{Summary of Findings}{12}{paragraph*.15}%
+\contentsline {paragraph}{Details of Findings}{13}{paragraph*.17}%
+\contentsline {paragraph}{Recommendation}{13}{paragraph*.18}%
+\contentsline {subsubsection}{\numberline {2.2.3}Problem 03: Ineffective Customer Representative \& Delivery Operations}{14}{subsubsection.2.2.3}%
+\contentsline {paragraph}{Statement of the Problem}{14}{paragraph*.20}%
+\contentsline {paragraph}{Summary of Findings}{14}{paragraph*.21}%
+\contentsline {paragraph}{Details of Findings}{15}{paragraph*.22}%
+\contentsline {paragraph}{Recommendation}{16}{paragraph*.24}%
+\contentsline {subsubsection}{\numberline {2.2.4}Problem 04: Operational and HR Process Inefficiencies}{16}{subsubsection.2.2.4}%
+\contentsline {paragraph}{Statement of the Problem}{16}{paragraph*.25}%
+\contentsline {paragraph}{Summary of Findings}{16}{paragraph*.26}%
+\contentsline {paragraph}{Details of Findings}{17}{paragraph*.27}%
+\contentsline {paragraph}{Recommendation}{17}{paragraph*.28}%
+\contentsline {subsubsection}{\numberline {2.2.5}Problem 05: Under-Optimized Application and Over-Engineered IT Infrastructure}{17}{subsubsection.2.2.5}%
+\contentsline {paragraph}{Statement of the Problem:}{17}{paragraph*.29}%
+\contentsline {paragraph}{Summary of Findings:}{17}{paragraph*.30}%
+\contentsline {paragraph}{Details of Findings}{18}{paragraph*.31}%
+\contentsline {paragraph}{Recommendation}{18}{paragraph*.32}%
+\contentsline {subsection}{\numberline {2.3}Conclusion}{19}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Analysis}{21}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Introduction}{21}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Information Gathering}{22}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Review of Literature, Procedure, and Forms}{23}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}On Site Observation}{28}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Interviews}{32}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Questionnaires}{43}{subsubsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.3}Information Representation/Analysis (Analytical Results)}{46}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Analysis of Questionnaire Results}{46}{subsubsection.3.3.1}%
+\contentsline {paragraph}{DFD of Existing System}{52}{paragraph*.52}%
+\contentsline {subparagraph}{Main DFD: Overall System}{52}{subparagraph*.53}%
+\contentsline {paragraph}{DFD for Problem 01: Lack of Profitability and Funding Constraints}{52}{paragraph*.55}%
+\contentsline {paragraph}{DFD for Problem 02: Supply Chain Inefficiencies and Product Sourcing Challenges}{55}{paragraph*.57}%
+\contentsline {paragraph}{DFD for Problem 03: Ineffective Customer Representative \& Delivery Operations}{56}{paragraph*.59}%
+\contentsline {paragraph}{DFD for Problem 04: Operational and HR Process Inefficiencies}{57}{paragraph*.61}%
+\contentsline {paragraph}{DFD for Problem 05: Under-Optimized Application and Over-Engineered IT Infrastructure}{58}{paragraph*.63}%
+\contentsline {subsection}{\numberline {3.4}Detailed Feasibility Analysis}{59}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Root Cause Analysis of Identified Problems}{59}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Candidate System 1: Integrated Supply Chain and Vendor Management System}{60}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Candidate System 2: Digital Workforce and Logistics Optimization Platform}{61}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Candidate System 3: Lean IT Infrastructure and Frontend App Optimization}{61}{subsubsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.5}Comparative Analysis of Candidate Systems}{62}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Selecting the best candidate system}{64}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Cost-Benefit Analysis}{65}{subsection.3.7}%
+\contentsline {subsubsection}{\numberline {3.7.1}Cost Breakdown:}{65}{subsubsection.3.7.1}%
+\contentsline {subsubsection}{\numberline {3.7.2}Benefit Breakdown:}{66}{subsubsection.3.7.2}%
+\contentsline {subsubsection}{\numberline {3.7.3}Break-Even Analysis:}{66}{subsubsection.3.7.3}%
+\contentsline {subsection}{\numberline {3.8}Conclusion}{67}{subsection.3.8}%
+\contentsline {section}{\numberline {4}Design}{68}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Introduction}{68}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}DFD of the Proposed System}{68}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Overview and Purpose}{68}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Component Description}{69}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Information Flow and System Walkthrough}{70}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Summary of Strategic Changes}{71}{subsubsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.3}Addressing Problem 01: Lack of Profitability and Funding Constraints}{71}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Summary}{71}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Components Added}{71}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Components Modified}{73}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Removed Components}{73}{subsubsection.4.3.4}%
+\contentsline {subsubsection}{\numberline {4.3.5}How This Solves the Problem}{73}{subsubsection.4.3.5}%
+\contentsline {subsubsection}{\numberline {4.3.6}Impact Analysis}{74}{subsubsection.4.3.6}%
+\contentsline {subsubsection}{\numberline {4.3.7}Case Study}{74}{subsubsection.4.3.7}%
+\contentsline {subsection}{\numberline {4.4}Addressing Problem 02: Product Sourcing and Supply Chain Inefficiencies}{74}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Summary}{74}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Components Added}{75}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Components Modified}{75}{subsubsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.4}Components Eliminated}{77}{subsubsection.4.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.5}How This Solves the Problem}{77}{subsubsection.4.4.5}%
+\contentsline {subsubsection}{\numberline {4.4.6}Impact Analysis (Statistical Projections)}{77}{subsubsection.4.4.6}%
+\contentsline {subsubsection}{\numberline {4.4.7}Short Case Study}{77}{subsubsection.4.4.7}%
+\contentsline {subsection}{\numberline {4.5}Addressing Problem 03:Ineffective Customer Representative Delivery Operations}{78}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Summary}{78}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Components Added}{79}{subsubsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.3}Components Modified}{79}{subsubsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.4}Components Eliminated}{79}{subsubsection.4.5.4}%
+\contentsline {subsubsection}{\numberline {4.5.5}How This Solves the Problem}{79}{subsubsection.4.5.5}%
+\contentsline {subsubsection}{\numberline {4.5.6}Impact Analysis (Statistical Projections)}{80}{subsubsection.4.5.6}%
+\contentsline {subsubsection}{\numberline {4.5.7}Short Case Study}{80}{subsubsection.4.5.7}%
+\contentsline {subsection}{\numberline {4.6}Addressing Problem 04:Operational and HR Process Inefficiencies}{80}{subsection.4.6}%
+\contentsline {subsubsection}{\numberline {4.6.1}Summary}{80}{subsubsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.2}Components Added}{81}{subsubsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.3}Components Modified}{82}{subsubsection.4.6.3}%
+\contentsline {subsubsection}{\numberline {4.6.4}Components Eliminated}{82}{subsubsection.4.6.4}%
+\contentsline {subsubsection}{\numberline {4.6.5}How This Solves the Problem}{82}{subsubsection.4.6.5}%
+\contentsline {subsubsection}{\numberline {4.6.6}Impact Analysis (Statistical Projections)}{82}{subsubsection.4.6.6}%
+\contentsline {subsubsection}{\numberline {4.6.7}Short Case Study}{83}{subsubsection.4.6.7}%
+\contentsline {subsection}{\numberline {4.7}Addressing Problem 05: Under-Optimized Application and Over-Engineered IT Infrastructure}{83}{subsection.4.7}%
+\contentsline {subsubsection}{\numberline {4.7.1}Summary}{83}{subsubsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {4.7.2}Components Added}{83}{subsubsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.3}Components Modified}{84}{subsubsection.4.7.3}%
+\contentsline {subsubsection}{\numberline {4.7.4}Components Eliminated}{85}{subsubsection.4.7.4}%
+\contentsline {subsubsection}{\numberline {4.7.5}How This Solves the Problem}{85}{subsubsection.4.7.5}%
+\contentsline {subsubsection}{\numberline {4.7.6}Impact Analysis (Statistical Projections)}{85}{subsubsection.4.7.6}%
+\contentsline {subsubsection}{\numberline {4.7.7}Short Case Study}{85}{subsubsection.4.7.7}%
+\contentsline {subsection}{\numberline {4.8}Database Design}{86}{subsection.4.8}%
+\contentsline {subsubsection}{\numberline {4.8.1}Objectives}{86}{subsubsection.4.8.1}%
+\contentsline {subsubsection}{\numberline {4.8.2}Specific Objectives}{86}{subsubsection.4.8.2}%
+\contentsline {subsubsection}{\numberline {4.8.3}Entity--Relationship Diagram}{87}{subsubsection.4.8.3}%
+\contentsline {subsubsection}{\numberline {4.8.4}Database Table Design}{92}{subsubsection.4.8.4}%
+\contentsline {subsection}{\numberline {4.9}Form Design}{96}{subsection.4.9}%
+\contentsline {subsubsection}{\numberline {4.9.1}Secure Authentication and Account Flow}{96}{subsubsection.4.9.1}%
+\contentsline {paragraph}{Login/Signup:}{97}{paragraph*.98}%
+\contentsline {paragraph}{Profile Setup:}{97}{paragraph*.99}%
+\contentsline {paragraph}{Error Handling \& Recovery:}{99}{paragraph*.102}%
+\contentsline {subsubsection}{\numberline {4.9.2}Geo-Optimized Address Management and Delivery Scheduling}{99}{subsubsection.4.9.2}%
+\contentsline {subsubsection}{\numberline {4.9.3}Dynamic Advanced Checkout Form}{100}{subsubsection.4.9.3}%
+\contentsline {subsubsection}{\numberline {4.9.4}Post-Delivery Feedback Form}{101}{subsubsection.4.9.4}%
+\contentsline {subsubsection}{\numberline {4.9.5}Summary of Design Impact}{102}{subsubsection.4.9.5}%
+\contentsline {paragraph}{Key Benefits:}{102}{paragraph*.110}%
+\contentsline {paragraph}{Integration with System Processes:}{102}{paragraph*.111}%
+\contentsline {subsection}{\numberline {4.10}Conclusion}{103}{subsection.4.10}%

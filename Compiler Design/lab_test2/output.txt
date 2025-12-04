@@ -1,0 +1,2 @@
+In line no 2, ID i is not declared.
+Syntax error at line 2

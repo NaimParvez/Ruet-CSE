@@ -1,0 +1,27 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Motivation and Dataset Selection}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Lab Objectives and Task Overview}{1}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Lab Tasks and Implementation}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Lab 1: Dataset Analysis}{2}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Initial Data Loading and Inspection}{2}{subsubsection.2.1.1}%
+\contentsline {paragraph}{Justification:}{3}{paragraph*.4}%
+\contentsline {subsection}{\numberline {2.2}Lab 2: Data Preprocessing}{4}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Adding Missing value:}{4}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Handling Missing Values}{5}{subsubsection.2.2.2}%
+\contentsline {paragraph}{Justification:}{5}{paragraph*.7}%
+\contentsline {subsubsection}{\numberline {2.2.3}Encoding \& Standardadization}{6}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Similarity and Dissimilarity Measures: }{7}{subsubsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.3}Lab 3: Exploratory Data Analysis (EDA)}{10}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Lab 5: Classification using Decision Trees}{14}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Create Categorical Labels \& Split Data}{14}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Train, Evaluate, and Visualize Tree}{14}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Cross-Validation}{16}{subsubsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.5}Lab 6: Clustering with k-Means}{17}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Find Optimal K with Elbow Method}{17}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}k-Means Clustering, Silhouette Score \& Visualization}{18}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}Build and Plot a Dendrogram}{20}{subsubsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.6}Lab 4: Mining Frequent Itemsets and Association Rules}{21}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Load and Preprocess the Data}{21}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Run FP-Growth to Find Frequent Itemsets}{22}{subsubsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.3}Extract and Interpret Association Rules}{23}{subsubsection.2.6.3}%
+\contentsline {section}{\numberline {3}Conclusion}{24}{section.3}%

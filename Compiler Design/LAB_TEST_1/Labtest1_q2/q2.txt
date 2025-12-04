@@ -1,0 +1,6 @@
+Consider given statements, 
+1. Year (2020) MBA-3  
+2. Year (2019) MSc-2  
+3. Year (2022) BBA-1
+a) Show a flex file which can tokenize given statements. 
+b) Show a bison file which can parse given statements.

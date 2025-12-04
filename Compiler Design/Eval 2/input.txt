@@ -1,0 +1,3 @@
+let i as DOUBLE;
+if (i == 3) begin stop;
+end 
