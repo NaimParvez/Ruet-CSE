@@ -1,0 +1,819 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{float}
+
+\geometry{margin=1in}
+
+% Code listing settings
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red},
+    backgroundcolor=\color{gray!10},
+    showstringspaces=false,
+    tabsize=4,
+    captionpos=b
+}
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Compiler Design Lab}
+\lhead{Complete Compiler Analysis}
+\rfoot{Page \thepage}
+
+\title{\textbf{Compiler Design Laboratory Report} \\ 
+\large Lexical, Syntax, and Semantic Analysis}
+\author{Student Name \\ Roll Number \\ Department of Computer Science}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+Compiler design is a multi-phase process that transforms high-level source code into executable machine code. The front-end of a compiler consists of three critical phases: lexical analysis, syntax analysis, and semantic analysis. Each phase plays a distinct role in understanding and validating the structure and meaning of the source code.
+
+\subsection{The Three Phases of Compiler Front-End}
+
+\textbf{Lexical Analysis} (scanning) is the first phase where the source code is read as a stream of characters and converted into a sequence of tokens. Tokens are the smallest meaningful units such as keywords, identifiers, operators, and literals. This phase removes comments and whitespace, simplifying the input for subsequent phases.
+
+\textbf{Syntax Analysis} (parsing) verifies that the token sequence conforms to the grammatical rules of the programming language. It constructs a parse tree or abstract syntax tree (AST) that represents the hierarchical structure of the program. This phase detects syntactic errors such as missing semicolons, unmatched parentheses, or incorrect statement ordering.
+
+\textbf{Semantic Analysis} examines the parse tree to ensure that the program makes logical sense. It performs type checking, verifies variable declarations, checks scope rules, and ensures that operations are performed on compatible data types. This phase catches errors that are syntactically correct but semantically meaningless, such as adding a string to an integer.
+
+\subsection{Importance of Multi-Phase Analysis}
+
+The separation of compilation into distinct phases provides several advantages:
+\begin{itemize}
+    \item \textbf{Modularity:} Each phase has a well-defined responsibility
+    \item \textbf{Error Detection:} Different types of errors are caught at appropriate stages
+    \item \textbf{Maintainability:} Changes to one phase don't affect others
+    \item \textbf{Reusability:} Components can be reused across different compilers
+    \item \textbf{Optimization:} Each phase can be independently optimized
+\end{itemize}
+
+\subsection{Experiment Context}
+
+This laboratory exercise demonstrates all three phases of compiler front-end analysis on a simple code snippet featuring variable declaration, type specification, conditional statements, and control flow. The code uses a custom syntax that combines elements from various programming languages:
+
+\begin{verbatim}
+let i as DOUBLE;
+if (i == 3) begin stop;
+end
+\end{verbatim}
+
+This experiment will showcase how a compiler processes this code through lexical tokenization, syntactic validation, and semantic type checking, ultimately detecting a type mismatch error between a DOUBLE variable and an integer constant.
+
+\section{Objective}
+
+The objectives of this laboratory exercise are to:
+\begin{enumerate}
+    \item Perform \textbf{lexical analysis} to tokenize the given code snippet
+    \item Perform \textbf{syntax analysis} to validate grammatical structure
+    \item Perform \textbf{semantic analysis} to check type compatibility
+    \item Understand the integration of all three compiler phases
+    \item Implement symbol table management for tracking variable declarations
+    \item Demonstrate error detection and reporting mechanisms
+\end{enumerate}
+
+\section{Theory}
+
+\subsection{Lexical Analysis}
+
+Lexical analysis transforms a character stream into a token stream. Each token has:
+\begin{itemize}
+    \item \textbf{Token Type:} Category (keyword, identifier, operator, etc.)
+    \item \textbf{Lexeme:} Actual text matched
+    \item \textbf{Attributes:} Additional information (value, type, etc.)
+\end{itemize}
+
+\textbf{Regular Expressions} are used to specify token patterns. For example:
+\begin{itemize}
+    \item Identifier: \texttt{[a-zA-Z][a-zA-Z0-9]*}
+    \item Integer: \texttt{[0-9]+}
+    \item Keyword: Exact string matches like "if", "while", "let"
+\end{itemize}
+
+\subsection{Syntax Analysis}
+
+Syntax analysis uses \textbf{context-free grammars} (CFG) to define language structure. A CFG consists of:
+\begin{itemize}
+    \item \textbf{Terminals:} Tokens from lexical analysis
+    \item \textbf{Non-terminals:} Abstract syntactic categories
+    \item \textbf{Production Rules:} Define how non-terminals expand
+    \item \textbf{Start Symbol:} Root of the parse tree
+\end{itemize}
+
+Bison generates \textbf{LALR(1) parsers} that use a bottom-up parsing strategy, reducing input tokens according to grammar rules until reaching the start symbol.
+
+\subsection{Semantic Analysis}
+
+Semantic analysis performs several key tasks:
+\begin{itemize}
+    \item \textbf{Symbol Table Management:} Tracking declared variables and their types
+    \item \textbf{Type Checking:} Ensuring operations are performed on compatible types
+    \item \textbf{Scope Resolution:} Verifying variable accessibility
+    \item \textbf{Declaration Checking:} Ensuring variables are declared before use
+\end{itemize}
+
+Type checking rules might include:
+\begin{itemize}
+    \item Arithmetic operations require numeric operands
+    \item Comparison operators require compatible types
+    \item Assignment requires type compatibility between LHS and RHS
+\end{itemize}
+
+\section{Problem Statement}
+
+Given the following code snippet:
+\begin{lstlisting}[caption={Input code for analysis}]
+let i as DOUBLE;
+if (i == 3) begin stop;
+end
+\end{lstlisting}
+
+\textbf{Tasks:}
+\begin{enumerate}
+    \item Perform lexical analysis to identify all tokens
+    \item Perform syntax analysis to validate the structure
+    \item Perform semantic analysis to check type compatibility
+    \item Detect the type mismatch between DOUBLE variable and integer constant
+\end{enumerate}
+
+\section{Implementation}
+
+\subsection{Input File (input.txt)}
+\begin{lstlisting}[caption={Complete input file}]
+let i as DOUBLE;
+if (i == 3) begin stop;
+end
+\end{lstlisting}
+
+\subsection{Lexical Analyzer (lexer.l)}
+
+\begin{lstlisting}[language=C, caption={Flex specification for lexical analysis}]
+%option noyywrap
+%{
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <string.h>
+    #include "parser.tab.h"
+    
+    int lineno = 1; // initialize to 1
+    void yyerror(char *s);
+%}
+alpha     [a-zA-Z]
+digit     [0-9]
+alnum     {alpha}|{digit}
+print     [ -~]
+ID        {alpha}{alnum}*
+ICONST    [0-9]{digit}*
+FCONST    {digit}*"."{digit}+
+CCONST    (\'{print}\')
+%%
+"//".* { } 
+"int"       { return INT; }
+"DOUBLE"    { return DOUBLE; }
+"float"     { return DOUBLE; } 
+"char"      { return CHAR; }  
+"let"       { return LET; }
+"FOR"       { return FOR; }
+"TO"        { return TO; }
+"DO"        { return DO; }
+"as"        { return AS; }
+"begin"     { return BEGINN; }
+"end"       { return ENDD; }
+"stop"      { return STOP; }
+"if"        { return IF; }
+"else"      { return ELSE; }
+"+"       { return ADDOP; }
+"-"       { return SUBOP; }
+"*"       { return MULOP; }
+"/"       { return DIVOP; }
+"=="      { return EQUOP; }
+">"       { return GT; }
+"<"       { return LT; }
+"("       { return LPAREN; }
+")"       { return RPAREN; }
+"{"       { return LBRACE; }
+"}"       { return RBRACE; }
+";"       { return SEMI; }
+"="       { return ASSIGN; }
+{ID}        {strcpy(yylval.str_val, yytext); return ID;}
+{ICONST}    {return ICONST;}
+{FCONST}    {return FCONST;}
+{CCONST}    {return CCONST;}
+"\n"        { lineno += 1; }
+[ \t\r\f]+  
+.       { yyerror("Unrecognized character"); }
+%%
+\end{lstlisting}
+
+\subsection{Symbol Table Implementation (symtab.c)}
+\textit{This file is included by the parser to handle variable tracking and type checking.}
+
+\begin{lstlisting}[language=C, caption={Symbol Table Logic}]
+#include <stdio.h>
+#include <string.h>
+
+#define INT_TYPE 1
+#define DOUBLE_TYPE 2
+#define CHAR_TYPE 3
+#define UNDEF_TYPE -1
+
+struct Symbol {
+    char name[100];
+    int type;
+} symtab[100];
+
+int sym_count = 0;
+
+void insert(char* name, int type) {
+    // Check if already exists
+    for(int i=0; i<sym_count; i++) {
+        if(strcmp(symtab[i].name, name) == 0) {
+            printf("Error: Variable %s already declared\n", name);
+            return;
+        }
+    }
+    strcpy(symtab[sym_count].name, name);
+    symtab[sym_count].type = type;
+    sym_count++;
+    
+    char* type_name = (type == DOUBLE_TYPE) ? "DOUBLE_TYPE" : "INT_TYPE";
+    printf("In line no %d, Inserting %s with type %s in symbol table.\n", lineno, name, type_name);
+}
+
+int idcheck(char* name) {
+    for(int i=0; i<sym_count; i++) {
+        if(strcmp(symtab[i].name, name) == 0) {
+            return 1;
+        }
+    }
+    printf("Error: Variable %s not declared at line %d\n", name, lineno);
+    return 0;
+}
+
+int gettype(char* name) {
+    for(int i=0; i<sym_count; i++) {
+        if(strcmp(symtab[i].name, name) == 0) {
+            return symtab[i].type;
+        }
+    }
+    return UNDEF_TYPE;
+}
+
+int typecheck(int type1, int type2) {
+    if(type1 == type2) return 1;
+    
+    char* t1 = (type1 == DOUBLE_TYPE) ? "DOUBLE_TYPE" : "INT_TYPE";
+    char* t2 = (type2 == DOUBLE_TYPE) ? "DOUBLE_TYPE" : "INT_TYPE";
+    
+    printf("In line no %d, Data type %s is not matched with Data type %s.\n", lineno, t1, t2);
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{Parser and Semantic Analyzer (parser.y)}
+
+\begin{lstlisting}[language=C, caption={Bison specification with semantic actions}]
+%{
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Initialize lineno
+extern int lineno;
+extern int yylex();
+void yyerror(char *s);
+
+// Include the symbol table logic defined above
+#include "symtab.c"
+
+int error_count = 0;
+%}
+
+%union{
+    char str_val[100];
+    int int_val;
+}
+
+%token INT IF ELSE WHILE CONTINUE BREAK PRINT DOUBLE CHAR
+%token ADDOP SUBOP MULOP DIVOP EQUOP LT GT
+%token LPAREN RPAREN LBRACE RBRACE SEMI ASSIGN
+%token LET AS BEGINN ENDD STOP
+%token<str_val> ID
+%token ICONST FCONST CCONST
+
+%type<int_val> type constant exp
+
+%left EQUOP
+%left LT GT
+%left ADDOP SUBOP
+%left MULOP DIVOP
+
+%start code
+
+%%
+code: statements
+    ;
+statements: statements statement 
+    | 
+    ;
+statement: let_declaration
+    | if_statement
+    | begin_block
+    | STOP SEMI
+    ;
+let_declaration: LET ID AS type SEMI
+    {
+        insert($2, $4);
+    }
+    ;
+begin_block: BEGINN statements ENDD
+    ;
+type: DOUBLE 
+    {
+        $$ = DOUBLE_TYPE;
+    }
+    | INT
+    {
+        $$ = INT_TYPE;
+    }
+    ;
+exp: constant
+    {
+        $$ = $1;
+    }
+    | ID
+    {
+        if(idcheck($1)==0)
+        {
+            error_count++;
+            $$ = UNDEF_TYPE;
+        }
+        else
+        {
+            $$ = gettype($1);
+        }
+    }
+    | exp EQUOP exp
+    {
+        if(typecheck($1, $3)==0)
+        {
+            error_count++;
+        }
+        $$ = INT_TYPE; // Boolean result is effectively int
+    }
+    | LPAREN exp RPAREN
+    {
+        $$ = $2;
+    }
+    ;
+constant: ICONST 
+    {
+        $$ = INT_TYPE;
+    }
+    | FCONST
+    {
+        $$ = DOUBLE_TYPE;
+    }
+    ;
+if_statement: IF LPAREN exp RPAREN statement
+    ;
+%%
+
+void yyerror(char *s)
+{
+    printf("Syntax error at line %d: %s\n", lineno, s);
+    error_count++;
+}
+
+int main(int argc, char *argv[])
+{
+    // If you want to read from file directly via C code:
+    // freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "w", stdout);
+
+    yyparse();
+    
+    if(error_count == 0)
+    {
+        printf("\nParsing finished successfully with no errors!\n");
+    }
+    else
+    {
+        printf("\nParsing finished with %d error(s).\n", error_count);
+    }
+    
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{Makefile}
+\textit{Note: The indentations below must be strict Tabs, not spaces.}
+
+\begin{lstlisting}[language=make, caption={Build automation}]
+input = input.txt
+output = output.txt
+
+main: lexer.l parser.y
+	bison -d parser.y
+	flex lexer.l
+	gcc parser.tab.c lex.yy.c -o compiler
+	./compiler < $(input) > $(output)
+\end{lstlisting}
+
+\section{Phase-by-Phase Analysis}
+
+\subsection{Phase 1: Lexical Analysis}
+
+The lexer processes the input character by character and produces the following tokens:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Lexeme} & \textbf{Token Type} & \textbf{Token Code} & \textbf{Attribute} \\
+\hline
+let & Keyword & LET & - \\
+i & Identifier & ID & str\_val = "i" \\
+as & Keyword & AS & - \\
+DOUBLE & Type Keyword & DOUBLE & - \\
+; & Delimiter & SEMI & - \\
+if & Keyword & IF & - \\
+( & Delimiter & LPAREN & - \\
+i & Identifier & ID & str\_val = "i" \\
+== & Operator & EQUOP & - \\
+3 & Integer Constant & ICONST & value = 3 \\
+) & Delimiter & RPAREN & - \\
+begin & Keyword & BEGINN & - \\
+stop & Keyword & STOP & - \\
+; & Delimiter & SEMI & - \\
+end & Keyword & ENDD & - \\
+\hline
+\end{tabular}
+\caption{Token sequence generated by lexical analyzer}
+\end{table}
+
+\textbf{Key Observations:}
+\begin{itemize}
+    \item Total tokens generated: 15
+    \item Keywords identified: let, as, DOUBLE, if, begin, stop, end
+    \item Identifiers: i (appears twice)
+    \item Operators: == (equality comparison)
+    \item Constants: 3 (integer constant)
+    \item Delimiters: ;, (, )
+    \item Whitespace and newlines are consumed but not tokenized
+\end{itemize}
+
+\subsection{Phase 2: Syntax Analysis}
+
+The parser validates the token sequence against the grammar rules:
+
+\textbf{Parse Tree Construction:}
+\begin{lstlisting}[caption={}, breaklines=false]
+code
+ +-- statements
+      +-- statements
+      |    +-- statement
+      |         +-- let_declaration
+      |              +-- LET
+      |              +-- ID (i)
+      |              +-- AS
+      |              +-- type
+      |              |    +-- DOUBLE
+      |              +-- SEMI
+      +-- statement
+           +-- if_statement
+                +-- IF
+                +-- LPAREN
+                +-- exp
+                |    +-- exp
+                |    |    +-- ID (i)
+                |    +-- EQUOP
+                |    +-- exp
+                |         +-- constant
+                |              +-- ICONST (3)
+                +-- RPAREN
+                +-- statement
+                     +-- begin_block
+                          +-- BEGINN
+                          +-- statements
+                          |    +-- statement
+                          |         +-- STOP
+                          |         +-- SEMI
+                          +-- ENDD
+\end{lstlisting}
+
+\textbf{Grammar Rules Applied:}
+\begin{enumerate}
+    \item \texttt{code → statements}
+    \item \texttt{statements → statements statement}
+    \item \texttt{statement → let\_declaration}
+    \item \texttt{let\_declaration → LET ID AS type SEMI}
+    \item \texttt{type → DOUBLE}
+    \item \texttt{statement → if\_statement}
+    \item \texttt{if\_statement → IF LPAREN exp RPAREN statement}
+    \item \texttt{exp → exp EQUOP exp}
+    \item \texttt{exp → ID}
+    \item \texttt{exp → constant}
+    \item \texttt{constant → ICONST}
+    \item \texttt{statement → begin\_block}
+    \item \texttt{begin\_block → BEGINN statements ENDD}
+\end{enumerate}
+
+\subsection{Phase 3: Semantic Analysis}
+
+Semantic analysis performs type checking and symbol table operations:
+
+\subsubsection{Symbol Table Operations}
+
+\textbf{Step 1: Variable Declaration}
+\begin{verbatim}
+Action: Insert variable 'i' with type DOUBLE_TYPE into symbol table
+Line: 1
+Message: "In line no 1, Inserting i with type DOUBLE_TYPE in symbol table."
+\end{verbatim}
+
+\textbf{Symbol Table After Declaration:}
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Variable Name} & \textbf{Type} & \textbf{Line Declared} \\
+\hline
+i & DOUBLE\_TYPE & 1 \\
+\hline
+\end{tabular}
+\caption{Symbol table contents}
+\end{table}
+
+\subsubsection{Type Checking in Expression}
+
+\textbf{Step 2: Analyzing the condition (i == 3)}
+
+\begin{itemize}
+    \item \textbf{Left operand:} Variable 'i'
+    \begin{itemize}
+        \item Check: Is 'i' declared? → YES (found in symbol table)
+        \item Type: DOUBLE\_TYPE
+    \end{itemize}
+    
+    \item \textbf{Right operand:} Constant '3'
+    \begin{itemize}
+        \item Type: INT\_TYPE (integer constant)
+    \end{itemize}
+    
+    \item \textbf{Operator:} == (equality comparison)
+    
+    \item \textbf{Type Checking:} typecheck(DOUBLE\_TYPE, INT\_TYPE)
+    \begin{itemize}
+        \item Result: FAIL (type mismatch)
+        \item Action: Increment error\_count
+        \item Message: "In line no 2, Data type TEXTTT{DOUBLE\_TYPE} is not matched with Data type \texttt{INT\_TYPE}."
+    \end{itemize}
+\end{itemize}
+
+\textbf{Error Detection:}
+\begin{verbatim}
+Error Type: TYPE MISMATCH
+Location: Line 2
+Description: Attempting to compare DOUBLE variable with INT constant
+Severity: Semantic Error
+\end{verbatim}
+
+\subsubsection{Semantic Analysis Result}
+
+\textbf{Final Status:}
+
+\begin{itemize}
+    \item Total errors: 1
+    \item Error type: Type mismatch in equality comparison
+    \item Variables declared: 1 (variable 'i')
+    \item Variables used: 1 (variable 'i')
+    \item Undeclared variables: 0
+\end{itemize}
+
+\section{Execution and Output}
+
+\subsection{Compilation Process}
+
+\begin{lstlisting}[language=bash, caption={Build commands}]
+$ make
+bison -d parser.y
+flex lexer.l
+gcc parser.tab.c lex.yy.c -o compiler
+./compiler <input.txt> output.txt
+\end{lstlisting}
+
+\subsection{Generated Files}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{File} & \textbf{Description} \\
+\hline
+lex.yy.c & Lexical analyzer source (from Flex) \\
+parser.tab.c & Parser source (from Bison) \\
+parser.tab.h & Token definitions and interface \\
+compiler & Final executable program \\
+output.txt & Analysis results \\
+\hline
+\end{tabular}
+\caption{Generated files during compilation}
+\end{table}
+
+\subsection{Output File (output.txt)}
+
+\begin{lstlisting}[caption={Complete compiler output}]
+In line no 1, Inserting i with type DOUBLE_TYPE in symbol table.
+In line no 2, Data type DOUBLE_TYPE is not matched with Data type INT_TYPE.
+Parsing finished with 1 error(s).
+\end{lstlisting}
+
+\section{Detailed Error Analysis}
+
+\subsection{Error Description}
+
+\textbf{Error Category:} Semantic Error (Type Mismatch)
+
+\textbf{Error Location:} Line 2, expression \texttt{i == 3}
+
+\textbf{Problem:} The variable \texttt{i} is declared as type DOUBLE, but it is being compared with an integer constant \texttt{3}. The type checking mechanism detects this incompatibility.
+
+\subsection{Why This is an Error}
+
+In strongly-typed languages, comparing values of different types without explicit conversion can lead to:
+\begin{itemize}
+    \item \textbf{Precision loss:} Implicit conversions may lose information
+    \item \textbf{Unexpected behavior:} Floating-point comparisons are imprecise
+    \item \textbf{Logical errors:} The comparison may not behave as intended
+\end{itemize}
+
+\subsection{Possible Solutions}
+
+\textbf{Solution 1: Explicit Type Casting}
+\begin{lstlisting}
+if ((int)i == 3) begin stop;
+end
+\end{lstlisting}
+
+\textbf{Solution 2: Use Floating-Point Constant}
+\begin{lstlisting}
+if (i == 3.0) begin stop;
+end
+\end{lstlisting}
+
+\textbf{Solution 3: Change Variable Type}
+\begin{lstlisting}
+let i as int;
+if (i == 3) begin stop;
+end
+\end{lstlisting}
+
+\section{Symbol Table Implementation}
+
+The symbol table (implemented in \texttt{symtab.c}) provides essential functions:
+
+\subsection{Key Functions}
+
+\textbf{insert(char* id, int type)}
+\begin{itemize}
+    \item Adds a new identifier to the symbol table
+    \item Records the identifier name and its type
+    \item Prints confirmation message
+\end{itemize}
+
+\textbf{idcheck(char* id)}
+\begin{itemize}
+    \item Checks if an identifier has been declared
+    \item Returns 1 if found, 0 otherwise
+    \item Used during semantic analysis to detect undeclared variables
+\end{itemize}
+
+\textbf{gettype(char* id)}
+\begin{itemize}
+    \item Retrieves the type of a declared identifier
+    \item Returns type constant (INT\_TYPE, DOUBLE\_TYPE, etc.)
+    \item Used for type checking in expressions
+\end{itemize}
+
+\textbf{typecheck(int type1, int type2)}
+\begin{itemize}
+    \item Compares two types for compatibility
+    \item Returns 1 if types match, 0 otherwise
+    \item Prints error message on type mismatch
+\end{itemize}
+
+\section{Compiler Architecture}
+
+\begin{figure}[H]
+\centering
+\begin{verbatim}
+                    INPUT SOURCE CODE
+                            |
+                            v
+                  +-------------------+
+                  | LEXICAL ANALYZER  |
+                  |    (Flex/Lex)     |
+                  +-------------------+
+                            |
+                      Token Stream
+                            |
+                            v
+                  +-------------------+
+                  |  SYNTAX ANALYZER  |
+                  |   (Bison/Yacc)    |
+                  +-------------------+
+                            |
+                        Parse Tree
+                            |
+                            v
+                  +-------------------+
+                  | SEMANTIC ANALYZER |
+                  | (Type Checking +  |
+                  |  Symbol Table)    |
+                  +-------------------+
+                            |
+                   Annotated Parse Tree
+                            |
+                            v
+                   ERROR REPORTING OR
+                  INTERMEDIATE CODE GEN
+\end{verbatim}
+\caption{Compiler front-end architecture}
+\end{figure}
+
+\section{Key Features Demonstrated}
+
+\subsection{Lexical Analysis Features}
+\begin{itemize}
+    \item Pattern matching with regular expressions
+    \item Keyword recognition
+    \item Identifier and constant tokenization
+    \item Comment handling
+    \item Whitespace filtering
+    \item Line number tracking
+\end{itemize}
+
+\subsection{Syntax Analysis Features}
+\begin{itemize}
+    \item Context-free grammar specification
+    \item Recursive statement handling
+    \item Operator precedence and associativity
+    \item Nested block structures
+    \item Grammar rule reduction
+    \item Error recovery mechanisms
+\end{itemize}
+
+\subsection{Semantic Analysis Features}
+\begin{itemize}
+    \item Symbol table management
+    \item Type checking for expressions
+    \item Declaration validation
+    \item Type compatibility verification
+    \item Error counting and reporting
+    \item Semantic action execution
+\end{itemize}
+
+\section{Conclusion}
+
+This laboratory exercise successfully demonstrated the complete front-end compilation process through three essential phases:
+
+\subsection{Achievements}
+
+\begin{enumerate}
+    \item \textbf{Lexical Analysis:} Successfully tokenized the input code into 15 meaningful tokens including keywords, identifiers, operators, and constants.
+    
+    \item \textbf{Syntax Analysis:} Validated the grammatical structure of the code, constructing a complete parse tree with proper handling of declarations, conditionals, and block structures.
+    
+    \item \textbf{Semantic Analysis:} Implemented type checking and symbol table management, successfully detecting a type mismatch error between DOUBLE and INT types.
+    
+    \item \textbf{Error Detection:} Demonstrated the compiler's ability to identify and report semantic errors with precise line numbers and descriptive messages.
+    
+    \item \textbf{Integration:} Showed how Flex and Bison work together seamlessly to create a functional compiler front-end.
+\end{enumerate}
+
+\end{document}

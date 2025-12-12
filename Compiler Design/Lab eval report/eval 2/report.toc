@@ -1,0 +1,38 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Background}{1}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Objective}{1}{section.2}%
+\contentsline {section}{\numberline {3}Theory}{1}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Lexical Analysis (Flex)}{1}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Syntax Analysis (Bison)}{1}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Flex-Bison Integration}{2}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Problem Statement}{2}{section.4}%
+\contentsline {section}{\numberline {5}Input Data}{2}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Input File (input.txt)}{2}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Implementation}{3}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Flex File (code1.l)}{3}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Token Definitions}{4}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Bison File (code1.y)}{4}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Grammar Rules Explanation}{5}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Makefile}{5}{subsection.6.5}%
+\contentsline {section}{\numberline {7}Execution and Results}{6}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Compilation Steps}{6}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Generated Files}{6}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Output Analysis (output.txt)}{6}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Detailed Analysis}{7}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Tokenization Process}{7}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Parsing Process}{7}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Syntax Error Analysis}{7}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Token-Value Associations}{8}{subsection.8.4}%
+\contentsline {section}{\numberline {9}Key Features}{8}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Flex Features Demonstrated}{8}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Bison Features Demonstrated}{8}{subsection.9.2}%
+\contentsline {section}{\numberline {10}Advantages and Applications}{9}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Advantages}{9}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Real-World Applications}{9}{subsection.10.2}%
+\contentsline {section}{\numberline {11}Possible Enhancements}{9}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Error Recovery}{9}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Extended Grammar}{9}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Semantic Validation}{9}{subsection.11.3}%
+\contentsline {section}{\numberline {12}Common Issues and Solutions}{10}{section.12}%
+\contentsline {section}{\numberline {13}Conclusion}{10}{section.13}%
+\contentsline {section}{\numberline {14}Learning Outcomes}{10}{section.14}%
